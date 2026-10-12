@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#c96f91">
+  <title>JASY Service | Recibos</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand-mark" aria-hidden="true">JS</div>
+      <div>
+        <h1>JASY Service</h1>
+        <p>Sistema de recibos de pago</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="intro">
+      <p class="eyebrow">ADMINISTRACIÓN DE PAGOS</p>
+      <h2>Crear recibo</h2>
+      <p class="intro-text">Complete los datos del pago y genere un recibo PDF listo para guardar o compartir.</p>
+    </section>
+
+    <section class="card">
+      <div class="section-heading">
+        <span class="step">01</span>
+        <div>
+          <h3>Información del cliente</h3>
+          <p>Datos de la persona que realiza el pago.</p>
+        </div>
+      </div>
+      <div class="form-grid">
+        <div class="field">
+          <label for="cliente">Nombre del cliente <span class="required">*</span></label>
+          <input id="cliente" type="text" autocomplete="name" placeholder="Nombre completo" required>
+        </div>
+        <div class="field">
+          <label for="telefonoCliente">Celular del cliente</label>
+          <input id="telefonoCliente" type="tel" autocomplete="tel" placeholder="Número de teléfono (opcional)">
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-heading">
+        <span class="step">02</span>
+        <div>
+          <h3>Detalle del servicio</h3>
+          <p>Indique qué servicio se está pagando.</p>
+        </div>
+      </div>
+      <div class="field">
+        <label for="servicio">Descripción del servicio <span class="required">*</span></label>
+        <textarea id="servicio" rows="4" placeholder="Describa el servicio realizado..." required></textarea>
+      </div>
+      <div class="form-grid">
+        <div class="field">
+          <label for="fecha">Fecha del recibo <span class="required">*</span></label>
+          <input id="fecha" type="date" required>
+        </div>
+        <div class="field">
+          <label for="metodoPago">Forma de pago</label>
+          <select id="metodoPago">
+            <option value="Efectivo">Efectivo</option>
+            <option value="Transferencia bancaria">Transferencia bancaria</option>
+            <option value="Depósito bancario">Depósito bancario</option>
+            <option value="Tarjeta">Tarjeta</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+      </div>
+      <div class="field">
+        <label for="observaciones">Observaciones</label>
+        <textarea id="observaciones" rows="2" placeholder="Detalles adicionales (opcional)"></textarea>
+      </div>
+    </section>
+
+    <section class="card payment-card">
+      <div class="section-heading">
+        <span class="step">03</span>
+        <div>
+          <h3>Monto recibido</h3>
+          <p>El importe del pago se mostrará en quetzales.</p>
+        </div>
+      </div>
+      <div class="field">
+        <label for="monto">Monto recibido (Q) <span class="required">*</span></label>
+        <div class="amount-input">
+          <span>Q</span>
+          <input id="monto" type="number" min="0.01" step="0.01" inputmode="decimal" placeholder="0.00" required>
+        </div>
+      </div>
+      <div class="amount-preview">
+        <span>Total del recibo</span>
+        <strong id="montoVista">Q0.00</strong>
+      </div>
+    </section>
+
+    <section class="receipt-preview card">
+      <div>
+        <p class="eyebrow">PRÓXIMO RECIBO</p>
+        <h3 id="numeroVista">REC-001</h3>
+        <p class="muted">La numeración se guarda en este navegador.</p>
+      </div>
+      <div class="preview-icon" aria-hidden="true">✓</div>
+    </section>
+
+    <div class="actions">
+      <button type="button" id="generarBtn" class="btn btn-primary">Generar recibo PDF</button>
+      <button type="button" id="limpiarBtn" class="btn btn-secondary">Limpiar formulario</button>
+    </div>
+
+    <p class="note">Empresa: JASY Service · Teléfono: 48012050</p>
+  </main>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.2/jspdf.umd.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

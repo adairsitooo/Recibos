@@ -1,0 +1,289 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+  --pink: #333333;
+  --pink-dark: #111111;
+  --pink-light: #f0f0f0;
+  --gold: #777777;
+  --gold-light: #eeeeee;
+  --ink: #202020;
+  --muted: #737373;
+  --line: #dedede;
+  --paper: #ffffff;
+  --page: #f7f7f7;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--page);
+  color: var(--ink);
+  font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.header {
+  background: linear-gradient(115deg, #111111, #444444);
+  color: #fff;
+  border-bottom: 3px solid #888888;
+  padding: 24px 20px;
+}
+
+.header-inner {
+  max-width: 850px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brand-mark {
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  display: grid;
+  place-items: center;
+  border: 1px solid rgba(255,255,255,.75);
+  border-radius: 50%;
+  color: #fff;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 19px;
+  letter-spacing: -1px;
+}
+
+.header h1 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 27px;
+  letter-spacing: .1px;
+}
+
+.header p {
+  margin: 4px 0 0;
+  color: #e5e5e5;
+  font-size: 13px;
+}
+
+.container {
+  max-width: 850px;
+  padding: 28px 18px 40px;
+  margin: 0 auto;
+}
+
+.intro { margin: 0 0 22px; }
+.eyebrow {
+  color: var(--pink-dark);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.7px;
+  margin: 0 0 8px;
+}
+.intro h2 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 29px;
+  font-weight: 700;
+}
+.intro-text {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+  max-width: 560px;
+}
+
+.card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 15px;
+  padding: 23px;
+  margin-bottom: 17px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, .035);
+}
+
+.section-heading {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+.step {
+  display: grid;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  flex: 0 0 35px;
+  border-radius: 10px;
+  background: var(--pink-light);
+  color: var(--pink-dark);
+  font-size: 11px;
+  font-weight: 700;
+}
+.section-heading h3 {
+  margin: 1px 0 4px;
+  font-size: 16px;
+}
+.section-heading p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 17px;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 17px;
+}
+.field:last-child { margin-bottom: 0; }
+label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #51434a;
+}
+.required { color: var(--pink-dark); }
+
+input, textarea, select {
+  width: 100%;
+  border: 1px solid #e4d6dc;
+  border-radius: 9px;
+  padding: 12px 13px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: 14px;
+  outline: none;
+  transition: border-color .18s ease, box-shadow .18s ease;
+}
+input { min-height: 45px; }
+textarea { resize: vertical; line-height: 1.55; min-height: 92px; }
+select { min-height: 45px; }
+input:focus, textarea:focus, select:focus {
+  border-color: var(--pink);
+  box-shadow: 0 0 0 3px rgba(50,50,50,.12);
+}
+input::placeholder, textarea::placeholder { color: #b1a5aa; }
+
+.payment-card {
+  border-color: #e8d8b4;
+  background: linear-gradient(145deg, #fff, #fffdf8);
+}
+.amount-input {
+  display: flex;
+  align-items: center;
+  border: 1px solid #dfc994;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+}
+.amount-input span {
+  align-self: stretch;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  background: var(--gold-light);
+  color: #8c6c20;
+  font-weight: 700;
+}
+.amount-input input {
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  font-size: 19px;
+  font-weight: 600;
+}
+.amount-input input:focus { box-shadow: none; }
+
+.amount-preview {
+  margin-top: 17px;
+  border-top: 1px solid #eee3ca;
+  padding-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.amount-preview span { color: var(--muted); font-size: 13px; }
+.amount-preview strong {
+  color: var(--pink-dark);
+  font-size: 22px;
+  font-family: "Playfair Display", Georgia, serif;
+}
+
+.receipt-preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  background: #fff;
+}
+.receipt-preview h3 {
+  margin: 0;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: 25px;
+  color: var(--pink-dark);
+}
+.receipt-preview .eyebrow { margin-bottom: 7px; }
+.muted { color: var(--muted); font-size: 11px; margin: 7px 0 0; }
+.preview-icon {
+  width: 43px;
+  height: 43px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--gold-light);
+  color: #8c6c20;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.actions {
+  display: flex;
+  gap: 12px;
+  margin: 21px 0 18px;
+}
+.btn {
+  min-height: 48px;
+  flex: 1;
+  border: 0;
+  border-radius: 10px;
+  padding: 13px 18px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .15s ease, opacity .15s ease;
+}
+.btn:active { transform: scale(.985); }
+.btn-primary {
+  color: #fff;
+  background: linear-gradient(115deg, #111111, #444444);
+  box-shadow: 0 5px 12px rgba(0,0,0,.12);
+}
+.btn-primary:hover { opacity: .92; }
+.btn-secondary { background: var(--gold-light); color: #333333; }
+.btn-secondary:hover { opacity: .85; }
+.note {
+  text-align: center;
+  color: #9a8c92;
+  font-size: 11px;
+  margin: 22px 0 0;
+}
+
+@media (max-width: 600px) {
+  .header { padding: 21px 17px; }
+  .header h1 { font-size: 24px; }
+  .container { padding: 24px 13px 32px; }
+  .intro h2 { font-size: 26px; }
+  .card { padding: 18px; border-radius: 13px; }
+  .form-grid { grid-template-columns: 1fr; gap: 0; }
+  .actions { flex-direction: column; }
+  .btn { width: 100%; }
+}
